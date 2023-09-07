@@ -10,13 +10,13 @@ const leaveRoom = require("./utils/leave-room.js");
 const { Server } = require("socket.io");
 app.use(cors());
 
-app.get("/", (req, res) => {
-  res.send("hello world");
-});
 const server = app.listen(8080, () => {
   console.log("server connected on port 8080");
 });
 
+app.get("/", (req, res) => {
+  res.send("hello world");
+});
 const io = new Server(server, {
   cors: {
     methods: ["GET", "POST"],
